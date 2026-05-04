@@ -24,7 +24,7 @@ subMenu();
 opcaoSubmenu =   scanner.nextInt();
                                 scanner.nextLine();
                                 break;
-                                        case 2:
+                                           case 2:
                                         System.out.println("Acompanhamentos:");
                                 System.out.println(itens[2].substring(4));
         System.out.println(itens[3].substring(4));
