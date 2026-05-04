@@ -21,7 +21,7 @@ subMenu();
         System.out.println("Opcao Invalida!");
                                     scanner.next();
                                 }
-opcaoSubmenu = scanner.nextInt();
+opcaoSubmenu =   scanner.nextInt();
                                 scanner.nextLine();
                                 break;
                                         case 2:
