@@ -1,17 +1,70 @@
-package org.example;
+case 2:
+subMenu();
+                    while (!scanner.hasNextInt()) {
+        System.out.println("Opcao Invalida!");
+                        scanner.next();
+                    }
+int opcaoSubmenu = scanner.nextInt();
+                    scanner.nextLine();
+                    do {
+                            switch (opcaoSubmenu){
+        case 0:
+        break;
+        case 1:
+        System.out.println("Lanches:");
+                                System.out.println(itens[0].substring(4));
+        System.out.println(itens[1].substring(4));
+        System.out.println("Digite qualquer tecla para voltar.");
+String vazio = scanner.nextLine();
+subMenu();
+                                while (!scanner.hasNextInt()) {
+        System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                                        case 2:
+                                        System.out.println("Acompanhamentos:");
+                                System.out.println(itens[2].substring(4));
+        System.out.println(itens[3].substring(4));
+        System.out.println("Digite qualquer tecla para voltar.");
+vazio = scanner.nextLine();
+subMenu();
+                                while (!scanner.hasNextInt()) {
+        System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                                        case 3:
+                                        System.out.println("Bebidas:");
+                                System.out.println(itens[4].substring(4));
+        System.out.println(itens[5].substring(4));
+        System.out.println(itens[6].substring(4));
+        System.out.println("Digite qualquer tecla para voltar.");
+vazio = scanner.nextLine();
+subMenu();
+                                while (!scanner.hasNextInt()) {
+        System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+default:
+        System.out.println("Opção não encontrada!");
+                                while (!scanner.hasNextInt()) {
+        System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                                        }   } while(opcaoSubmenu != 0);
+exibirMenu();
+opcaoCliente = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
-    }
-}
