@@ -1,17 +1,38 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Scanner;
+
+
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        // DATABASE
+        String[] itens = new String[7];
+        double[] preco = new double[7];
+        preco[0] = 22.90;
+        preco[1] = 29.90;
+        preco[2] = 12.00;
+        preco[3] = 18.00;
+        preco[4] = 7.00;
+        preco[5] = 10.00;
+        preco[6] = 4.00;
+
+        itens[0] = "1 - Byte Burger Classico R$" + String.format("%.2f", preco[0]);
+        itens[1] = "2 - Byte Burger Duplo R$" + String.format("%.2f", preco[1]);
+        itens[2] = "3 - Batata Frita P R$" + String.format("%.2f", preco[2]);
+        itens[3] = "4 - Batata Frita G R$" + String.format("%.2f", preco[3]);
+        itens[4] = "5 - Refrigerante Lata R$" + String.format("%.2f", preco[4]);
+        itens[5] = "6 - Suco Normal R$" + String.format("%.2f", preco[5]);
+        itens[6] = "7 - Agua R$" + String.format("%.2f", preco[6]);
+        //FIM DATABASE
+
     }
 }
