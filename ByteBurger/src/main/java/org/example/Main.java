@@ -1,4 +1,3 @@
-package org.example;
 
 
 import java.lang.reflect.Array;
@@ -38,6 +37,88 @@ public class Main {
         itens[6] = "7 - Agua R$" + String.format("%.2f", preco[6]);
         //FIM DATABASE
 
+
+        case 2:
+        subMenu();
+        while (!scanner.hasNextInt()) {
+            System.out.println("Opcao Invalida!");
+            scanner.next();
+        }
+        int opcaoSubmenu = scanner.nextInt();
+        scanner.nextLine();
+        do {
+            switch (opcaoSubmenu){
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Lanches:");
+                    System.out.println(itens[0].substring(4));
+                    System.out.println(itens[1].substring(4));
+                    System.out.println("Digite qualquer tecla para voltar.");
+                    String vazio = scanner.nextLine();
+                    subMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida!");
+                        scanner.next();
+                    }
+                    opcaoSubmenu =   scanner.nextInt();
+                    scanner.nextLine();
+                    break;
+                case 2:
+                    System.out.println("Acompanhamentos:");
+                    System.out.println(itens[2].substring(4));
+                    System.out.println(itens[3].substring(4));
+                    System.out.println("Digite qualquer tecla para voltar.");
+                    vazio = scanner.nextLine();
+                    subMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida!");
+                        scanner.next();
+                    }
+                    opcaoSubmenu = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
+                case 3:
+                    System.out.println("Bebidas:");
+                    System.out.println(itens[4].substring(4));
+                    System.out.println(itens[5].substring(4));
+                    System.out.println(itens[6].substring(4));
+                    System.out.println("Digite qualquer tecla para voltar.");
+                    vazio = scanner.nextLine();
+                    subMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida!");
+                        scanner.next();
+                    }
+                    opcaoSubmenu = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
+                default:
+                    System.out.println("Opção não encontrada!");
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida!");
+                        scanner.next();
+                    }
+                    opcaoSubmenu = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
+            }   } while(opcaoSubmenu != 0);
+        exibirMenu();
+        opcaoCliente = scanner.nextInt();
+        scanner.nextLine();
+        break;
+
+
+    }
+    
+    public static void subMenu(){
+        System.out.println("-------------------");
+        System.out.println("1 - Lanches");
+        System.out.println("2 - Acompanhmentos");
+        System.out.println("3 - Bebidas");
+        System.out.println("0 - Voltar");
+        System.out.println("Digite opção:");
+
         System.out.println("O item sorteado " +
                 "do dia e:" + itens[a].substring(3) +" com 20% de desconto!");
         exibirMenu();
@@ -47,6 +128,7 @@ public class Main {
         }
         opcaoCliente = scanner.nextInt();
         scanner.nextLine();
-        break;
+    
     }
 }
+
