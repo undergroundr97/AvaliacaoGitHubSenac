@@ -1,30 +1,3 @@
-
-
-import java.util.Scanner;
-
-public class Main {
-    static void main(String[] args) {
-        double valorRecebido;
-        double valorTotalPedido = 0;
-
-        System.out.println("Digite o valor possuido:");
-        valorRecebido = sc.nextDouble();
-
-        while(valorRecebido < valorTotalPedido){
-            System.out.println("Valor " +
-                    "Insuficiente");
-            System.out.println("Adicioe mais " +
-                    "fundos");
-
-            System.out.println("Valor total do pedido: " + valorTotalPedido);
-            valorRecebido += sc.nextDouble();
-        }
-        double troco = valorRecebido - valorTotalPedido;
-        System.out.println("Troco e: " + troco);
-
-        }
-
-
 import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -32,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
-
 
 public class Main {
     static void main() {
@@ -62,100 +34,8 @@ public class Main {
         itens[6] = "7 - Agua R$" + String.format("%.2f", preco[6]);
         //FIM DATABASE
 
-
-
-        case 2:
-        subMenu();
-        while (!scanner.hasNextInt()) {
-            System.out.println("Opcao Invalida!");
-            scanner.next();
-        }
-        int opcaoSubmenu = scanner.nextInt();
-        scanner.nextLine();
-        do {
-            switch (opcaoSubmenu){
-                case 0:
-                    break;
-                case 1:
-                    System.out.println("Lanches:");
-                    System.out.println(itens[0].substring(4));
-                    System.out.println(itens[1].substring(4));
-                    System.out.println("Digite qualquer tecla para voltar.");
-                    String vazio = scanner.nextLine();
-                    subMenu();
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Opcao Invalida!");
-                        scanner.next();
-                    }
-                    opcaoSubmenu =   scanner.nextInt();
-                    scanner.nextLine();
-                    break;
-                case 2:
-                    System.out.println("Acompanhamentos:");
-                    System.out.println(itens[2].substring(4));
-                    System.out.println(itens[3].substring(4));
-                    System.out.println("Digite qualquer tecla para voltar.");
-                    vazio = scanner.nextLine();
-                    subMenu();
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Opcao Invalida!");
-                        scanner.next();
-                    }
-                    opcaoSubmenu = scanner.nextInt();
-                    scanner.nextLine();
-                    break;
-                case 3:
-                    System.out.println("Bebidas:");
-                    System.out.println(itens[4].substring(4));
-                    System.out.println(itens[5].substring(4));
-                    System.out.println(itens[6].substring(4));
-                    System.out.println("Digite qualquer tecla para voltar.");
-                    vazio = scanner.nextLine();
-                    subMenu();
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Opcao Invalida!");
-                        scanner.next();
-                    }
-                    opcaoSubmenu = scanner.nextInt();
-                    scanner.nextLine();
-                    break;
-                default:
-                    System.out.println("Opção não encontrada!");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Opcao Invalida!");
-                        scanner.next();
-                    }
-                    opcaoSubmenu = scanner.nextInt();
-                    scanner.nextLine();
-                    break;
-            }   } while(opcaoSubmenu != 0);
-        exibirMenu();
-        opcaoCliente = scanner.nextInt();
-        scanner.nextLine();
-        break;
-
-
-    }
-    
-    public static void subMenu(){
-        System.out.println("-------------------");
-        System.out.println("1 - Lanches");
-        System.out.println("2 - Acompanhmentos");
-        System.out.println("3 - Bebidas");
-        System.out.println("0 - Voltar");
-        System.out.println("Digite opção:");
-
-        System.out.println("O item sorteado " +
-                "do dia e:" + itens[a].substring(3) +" com 20% de desconto!");
-        exibirMenu();
-        while (!scanner.hasNextInt()) {
-            System.out.println("Opcao Invalida");
-            scanner.next();
-        }
-        opcaoCliente = scanner.nextInt();
-        scanner.nextLine();
-    
-
+        double valorRecebido;
+        double valorTotalPedido = 0;
 
         ArrayList<Integer> pedidoCliente;
         String nome;
@@ -168,7 +48,7 @@ public class Main {
         int opcaoCliente = scanner.nextInt();
         scanner.nextLine();
         do {
-            switch (opcaoCliente) {
+            switch(opcaoCliente){
                 case 0:
                     break;
                 case 1:
@@ -190,9 +70,9 @@ public class Main {
                         }
 
                         int opcaoPedidoCliente = scanner.nextInt();
-                        while (opcaoPedidoCliente < 1 || opcaoPedidoCliente > 7) {
+                        while(opcaoPedidoCliente < 1 || opcaoPedidoCliente > 7){
                             System.out.printf("OPCAO INVALIDA DIGITE NOVAMENTE ");
-                            while (!scanner.hasNextInt()) {
+                            while(!scanner.hasNextInt()){
                                 System.out.println("OpcaoInvalida");
                                 scanner.next();
                             }
@@ -206,7 +86,7 @@ public class Main {
                             System.out.println("Opcao incorreta, digite novamente (S/N)");
                             adicionarPedido = scanner.nextLine();
                         }
-                    } while (!adicionarPedido.equalsIgnoreCase("n"));
+                    } while(!adicionarPedido.equalsIgnoreCase("n"));
 
                     System.out.println("---- RESUMO PEDIDO ----");
                     System.out.println("Nome: " + nome);
@@ -230,12 +110,123 @@ public class Main {
                     opcaoCliente = scanner.nextInt();
                     break;
                 case 2:
+                    subMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida!");
+                        scanner.next();
+                    }
+                    int opcaoSubmenu = scanner.nextInt();
+                    scanner.nextLine();
+                    do {
+                        switch (opcaoSubmenu){
+                            case 0:
+                                break;
+                            case 1:
+                                System.out.println("Lanches:");
+                                System.out.println(itens[0].substring(4));
+                                System.out.println(itens[1].substring(4));
+                                System.out.println("Digite qualquer tecla para voltar.");
+                                String vazio = scanner.nextLine();
+                                subMenu();
+                                while (!scanner.hasNextInt()) {
+                                    System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+                                opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                            case 2:
+                                System.out.println("Acompanhamentos:");
+                                System.out.println(itens[2].substring(4));
+                                System.out.println(itens[3].substring(4));
+                                System.out.println("Digite qualquer tecla para voltar.");
+                                vazio = scanner.nextLine();
+                                subMenu();
+                                while (!scanner.hasNextInt()) {
+                                    System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+                                opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                            case 3:
+                                System.out.println("Bebidas:");
+                                System.out.println(itens[4].substring(4));
+                                System.out.println(itens[5].substring(4));
+                                System.out.println(itens[6].substring(4));
+                                System.out.println("Digite qualquer tecla para voltar.");
+                                vazio = scanner.nextLine();
+                                subMenu();
+                                while (!scanner.hasNextInt()) {
+                                    System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+                                opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                            default:
+                                System.out.println("Opção não encontrada!");
+                                while (!scanner.hasNextInt()) {
+                                    System.out.println("Opcao Invalida!");
+                                    scanner.next();
+                                }
+                                opcaoSubmenu = scanner.nextInt();
+                                scanner.nextLine();
+                                break;
+                        }   } while(opcaoSubmenu != 0);
+                    exibirMenu();
+                    opcaoCliente = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
 
 
                 case 3:
+                    System.out.println("O valor que precisa ser depositado é: " + String.format("%.2f",
+                            valorTotalPedido));
+                    System.out.println("Deposite o valor:");
+                    while(!scanner.hasNextDouble()){
+                        System.out.println("Valor Invalido");
+                        scanner.next();
+                    }
+                    valorRecebido = scanner.nextDouble();
 
+
+                    while(valorRecebido < valorTotalPedido){
+                        System.out.println("Valor " +
+                                "Insuficiente");
+
+
+                        System.out.println("Voce entregou: " + valorRecebido);
+                        System.out.println("Valor total do pedido: " + valorTotalPedido);
+                        System.out.println("Adicione mais " +
+                                "fundos");
+                        while(!scanner.hasNextDouble()){
+                            System.out.println("Valor Invalido");
+                            scanner.next();
+                        }
+                        valorRecebido += scanner.nextDouble();
+                    }
+                    double troco = valorRecebido - valorTotalPedido;
+                    System.out.println("Troco e: " + troco);
+                    exibirMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida");
+                        scanner.next();
+                    }
+                    opcaoCliente = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
                 case 4:
-
+                    System.out.println("O item sorteado " +
+                            "do dia e:" + itens[a].substring(3) +" com 20% de desconto!");
+                    exibirMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida");
+                        scanner.next();
+                    }
+                    opcaoCliente = scanner.nextInt();
+                    scanner.nextLine();
+                    break;
                 default:
                     System.out.println("Nao e uma opcao " +
                             "valida!");
@@ -246,13 +237,11 @@ public class Main {
                     }
                     opcaoCliente = scanner.nextInt();
                     scanner.nextLine();
-            }
-        } while (opcaoCliente != 0);
+            } } while(opcaoCliente != 0 );
         System.out.printf("----- BYE BYE BURGERS -----");
 
     }
-
-    public static void exibirMenu() {
+    public static void exibirMenu(){
         System.out.println("1 - Novo Pedido");
         System.out.println("2 - Consultar Cardapio por " +
                 "Categoria");
@@ -260,5 +249,14 @@ public class Main {
         System.out.println("4 - Sorteio do Dia");
         System.out.println("0 - Encerrar o Sistema");
     }
-}
+    public static void subMenu(){
+        System.out.println("-------------------");
+        System.out.println("1 - Lanches");
+        System.out.println("2 - Acompanhmentos");
+        System.out.println("3 - Bebidas");
+        System.out.println("0 - Voltar");
+        System.out.println("Digite opção:");
+    }
 
+
+}
