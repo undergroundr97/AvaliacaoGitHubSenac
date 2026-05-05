@@ -38,10 +38,6 @@ public class Main {
         itens[6] = "7 - Agua R$" + String.format("%.2f", preco[6]);
         //FIM DATABASE
 
-        
-
-
-
         System.out.println("O item sorteado " +
                 "do dia e:" + itens[a].substring(3) +" com 20% de desconto!");
         exibirMenu();
@@ -52,10 +48,5 @@ public class Main {
         opcaoCliente = scanner.nextInt();
         scanner.nextLine();
         break;
-
-
-
-
-
     }
 }
