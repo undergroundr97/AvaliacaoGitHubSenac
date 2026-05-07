@@ -1,7 +1,11 @@
 Avaliação GITHUB Senac
 
 Alunos:
+
 Vitor Emanuel 
+
 Elton Soares
-Vinicius Mendes
+
+Vinicius Santos
+
 Luis Felipe
