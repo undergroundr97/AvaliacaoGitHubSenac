@@ -32,7 +32,8 @@ public class Main {
         itens[6] = "7 - Agua R$" + String.format("%.2f", preco[6]);
         //FIM DATABASE
 
-
+        ArrayList<Integer> pedidoCliente;
+        String nome;
         System.out.println("-----BEMVINDO AO BYTEBURGER-----");
         exibirMenu();
         while (!scanner.hasNextInt()) {
@@ -46,6 +47,62 @@ public class Main {
                 case 0:
                     break;
                 case 1:
+                    pedidoCliente = new ArrayList<>();
+                    valorTotalPedido = 0;
+                    String adicionarPedido;
+                    System.out.println("Digite o seu nome:" +
+                            " ");
+                    nome = scanner.nextLine();
+
+                    do {
+                        for (String item : itens) {
+                            System.out.printf("%s%n", item);
+                        }
+                        System.out.println("Digite o codigo do produto: ");
+                        while (!scanner.hasNextInt()) {
+                            System.out.println("Opcao Invalida");
+                            scanner.next();
+                        }
+
+                        int opcaoPedidoCliente = scanner.nextInt();
+                        while(opcaoPedidoCliente < 1 || opcaoPedidoCliente > 7){
+                            System.out.printf("OPCAO INVALIDA DIGITE NOVAMENTE ");
+                            while(!scanner.hasNextInt()){
+                                System.out.println("OpcaoInvalida");
+                                scanner.next();
+                            }
+                            opcaoPedidoCliente = scanner.nextInt();
+                        }
+                        scanner.nextLine();
+                        pedidoCliente.add(opcaoPedidoCliente - 1);
+                        System.out.println("Deseja Adicionar um novo produto?");
+                        adicionarPedido = scanner.nextLine();
+                        while (!adicionarPedido.equalsIgnoreCase("n") && !adicionarPedido.equalsIgnoreCase("s")) {
+                            System.out.println("Opcao incorreta, digite novamente (S/N)");
+                            adicionarPedido = scanner.nextLine();
+                        }
+                    } while(!adicionarPedido.equalsIgnoreCase("n"));
+
+                    System.out.println("---- RESUMO PEDIDO ----");
+                    System.out.println("Nome: " + nome);
+                    for (Integer i : pedidoCliente) {
+                        System.out.println(itens[i]);
+                        valorTotalPedido += preco[i];
+                    }
+                    System.out.printf("Valor Total: R$ %.2f%n", valorTotalPedido);
+                    LocalDateTime dataAgora = LocalDateTime.now();
+                    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+                    System.out.println("Pedido realizado em: " + format.format(dataAgora));
+                    System.out.println("------------------------");
+                    System.out.println("Confirme com enter");
+                    //apenas para verificar pedido
+                    String confirmVazio = scanner.nextLine();
+                    exibirMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida");
+                        scanner.next();
+                    }
+                    opcaoCliente = scanner.nextInt();
                     break;
                 case 2:
                     break;
