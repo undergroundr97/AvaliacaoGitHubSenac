@@ -6,6 +6,6 @@ Vitor Emanuel
 
 Elton Soares
 
-Vinicius Mendes
+Vinicius Santos
 
 Luis Felipe
