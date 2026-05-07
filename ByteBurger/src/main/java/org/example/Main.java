@@ -23,6 +23,10 @@ public class Main {
         preco[5] = 10.00;
         preco[6] = 4.00;
 
+        double numeroSorteado = Math.random()*7;
+        int a = (int) numeroSorteado;
+        preco[a] -= preco[a] * 0.2 ;
+        
         itens[0] = "1 - Byte Burger Classico R$" + String.format("%.2f", preco[0]);
         itens[1] = "2 - Byte Burger Duplo R$" + String.format("%.2f", preco[1]);
         itens[2] = "3 - Batata Frita P R$" + String.format("%.2f", preco[2]);
@@ -109,6 +113,15 @@ public class Main {
                 case 3:
                     break;
                 case 4:
+                    System.out.println("O item sorteado " +
+                            "do dia e:" + itens[a].substring(3) +" com 20% de desconto!");
+                    exibirMenu();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Opcao Invalida");
+                        scanner.next();
+                    }
+                    opcaoCliente = scanner.nextInt();
+                    scanner.nextLine();
                     break;
                 default:
                     System.out.println("Nao e uma opcao " +
