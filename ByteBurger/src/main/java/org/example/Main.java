@@ -46,13 +46,13 @@ public class Main {
                 case 0:
                     break;
                 case 1:
-
+                    break;
                 case 2:
-
+                    break;
                 case 3:
-
+                    break;
                 case 4:
-
+                    break;
                 default:
                     System.out.println("Nao e uma opcao " +
                             "valida!");
